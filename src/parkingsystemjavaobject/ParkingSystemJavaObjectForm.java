@@ -9,6 +9,11 @@
 package parkingsystemjavaobject;
 
 
+// IMPORTAÇÃO DE BIBLIOTECAS:
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
+
 // MÉTODO PRINCIPAL DA CLASSE:
 public class ParkingSystemJavaObjectForm extends javax.swing.JFrame {
 
@@ -17,6 +22,14 @@ public class ParkingSystemJavaObjectForm extends javax.swing.JFrame {
     public ParkingSystemJavaObjectForm() {
         
         initComponents();
+        ImageIcon icone = new ImageIcon(getClass().getResource("/icones/car_add.png"));
+        setIconImage(icone.getImage());
+        
+        txt_campo_permanencia.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_campo_hora.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_campo_total_a_pagar.setHorizontalAlignment(javax.swing.JLabel.CENTER);
+        txt_campo_total_de_horas.setHorizontalAlignment(javax.swing.JLabel.CENTER);
+        txt_campo_valor_bruto.setHorizontalAlignment(javax.swing.JLabel.CENTER);
         
     }
 
@@ -30,21 +43,214 @@ public class ParkingSystemJavaObjectForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        txt_painel_geral = new javax.swing.JPanel();
+        txt_botao_limpar_e_liberar = new javax.swing.JButton();
+        txt_botao_carro = new javax.swing.JButton();
+        txt_botao_moto = new javax.swing.JButton();
+        txt_campo_hora = new javax.swing.JTextField();
+        txt_campo_permanencia = new javax.swing.JTextField();
+        txt_campo_total_a_pagar = new javax.swing.JLabel();
+        txt_campo_total_de_horas = new javax.swing.JLabel();
+        txt_campo_valor_bruto = new javax.swing.JLabel();
+        txt_barra_de_menu_geral = new javax.swing.JMenuBar();
+        txt_menu_geral = new javax.swing.JMenu();
+        txt_sub_item_sair = new javax.swing.JMenuItem();
+        txt_menu_sobre = new javax.swing.JMenu();
+        txt_sub_item_info = new javax.swing.JMenuItem();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setTitle("PARKING SYSTEM");
+        setResizable(false);
+
+        txt_painel_geral.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "- EXIBIÇÃO GERAL -", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+
+        txt_botao_limpar_e_liberar.setBackground(new java.awt.Color(102, 255, 102));
+        txt_botao_limpar_e_liberar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/folder_brick.png"))); // NOI18N
+        txt_botao_limpar_e_liberar.setText("LIMPAR E LIBERAR");
+        txt_botao_limpar_e_liberar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        txt_botao_limpar_e_liberar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_botao_limpar_e_liberarActionPerformed(evt);
+            }
+        });
+
+        txt_botao_carro.setBackground(new java.awt.Color(153, 153, 255));
+        txt_botao_carro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/brick_add.png"))); // NOI18N
+        txt_botao_carro.setText("CARRO");
+        txt_botao_carro.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        txt_botao_carro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_botao_carroActionPerformed(evt);
+            }
+        });
+
+        txt_botao_moto.setBackground(new java.awt.Color(153, 153, 255));
+        txt_botao_moto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/brick_add.png"))); // NOI18N
+        txt_botao_moto.setText("MOTO");
+        txt_botao_moto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        txt_botao_moto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_botao_motoActionPerformed(evt);
+            }
+        });
+
+        txt_campo_hora.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "- VALOR DA HORA -", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+
+        txt_campo_permanencia.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "- TEMPO DE PERMANENCIA -", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+
+        txt_campo_total_a_pagar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/money_add.png"))); // NOI18N
+        txt_campo_total_a_pagar.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "- TOTAL A PAGAR -", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+
+        txt_campo_total_de_horas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/clock_add.png"))); // NOI18N
+        txt_campo_total_de_horas.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "- TOTAL DE HORAS -", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+
+        txt_campo_valor_bruto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/chart_pie_add.png"))); // NOI18N
+        txt_campo_valor_bruto.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "- VALOR BRUTO -", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 1, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+
+        javax.swing.GroupLayout txt_painel_geralLayout = new javax.swing.GroupLayout(txt_painel_geral);
+        txt_painel_geral.setLayout(txt_painel_geralLayout);
+        txt_painel_geralLayout.setHorizontalGroup(
+            txt_painel_geralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(txt_painel_geralLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(txt_painel_geralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(txt_painel_geralLayout.createSequentialGroup()
+                        .addGroup(txt_painel_geralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_campo_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_campo_permanencia, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_campo_total_a_pagar, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_campo_valor_bruto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_botao_limpar_e_liberar, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_campo_total_de_horas, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(txt_painel_geralLayout.createSequentialGroup()
+                        .addGroup(txt_painel_geralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txt_botao_carro, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txt_botao_moto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        txt_painel_geralLayout.setVerticalGroup(
+            txt_painel_geralLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, txt_painel_geralLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txt_campo_total_a_pagar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_campo_valor_bruto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_campo_total_de_horas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(txt_campo_permanencia, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_campo_hora, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52)
+                .addComponent(txt_botao_carro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_botao_moto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txt_botao_limpar_e_liberar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        txt_menu_geral.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/script_gear.png"))); // NOI18N
+        txt_menu_geral.setText("GERAL");
+
+        txt_sub_item_sair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ESCAPE, 0));
+        txt_sub_item_sair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/cancel.png"))); // NOI18N
+        txt_sub_item_sair.setText("SAIR");
+        txt_sub_item_sair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_sub_item_sairActionPerformed(evt);
+            }
+        });
+        txt_menu_geral.add(txt_sub_item_sair);
+
+        txt_barra_de_menu_geral.add(txt_menu_geral);
+
+        txt_menu_sobre.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/information.png"))); // NOI18N
+        txt_menu_sobre.setText("SOBRE");
+
+        txt_sub_item_info.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        txt_sub_item_info.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icones/error.png"))); // NOI18N
+        txt_sub_item_info.setText("INFO");
+        txt_sub_item_info.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_sub_item_infoActionPerformed(evt);
+            }
+        });
+        txt_menu_sobre.add(txt_sub_item_info);
+
+        txt_barra_de_menu_geral.add(txt_menu_sobre);
+
+        setJMenuBar(txt_barra_de_menu_geral);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1000, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txt_painel_geral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txt_painel_geral, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    // BOTÃO CARRO:
+    private void txt_botao_carroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_botao_carroActionPerformed
+        
+        JOptionPane.showMessageDialog(null, "FUNÇÃO EM DESENVOLVIMENTO!", "AVISO:", 1);
+        
+    }//GEN-LAST:event_txt_botao_carroActionPerformed
+
+    
+    // BOTÃO MOTO:
+    private void txt_botao_motoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_botao_motoActionPerformed
+        
+        JOptionPane.showMessageDialog(null, "FUNÇÃO EM DESENVOLVIMENTO!", "AVISO:", 1);
+        
+    }//GEN-LAST:event_txt_botao_motoActionPerformed
+
+    
+    // BOTÃO LIMPAR E LIBERAR:
+    private void txt_botao_limpar_e_liberarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_botao_limpar_e_liberarActionPerformed
+        
+        JOptionPane.showMessageDialog(null, "FUNÇÃO EM DESENVOLVIMENTO!", "AVISO:", 1);
+        
+    }//GEN-LAST:event_txt_botao_limpar_e_liberarActionPerformed
+
+    
+    // SUB ITEM DE MENU - SAIR - [ MENU GERAL ]:
+    private void txt_sub_item_sairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sub_item_sairActionPerformed
+        
+        int confirmar_sair = 0;
+        confirmar_sair = 0;
+        confirmar_sair = JOptionPane.showConfirmDialog(null, "REALMENTE DESEJA SAIR ?");
+
+        if ( confirmar_sair == 0 ) {
+
+            this.dispose();
+
+        }
+
+    }//GEN-LAST:event_txt_sub_item_sairActionPerformed
+
+    
+    // SUB ITEM DE MENU - INFO - [ MENU SOBRE ]:
+    private void txt_sub_item_infoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_sub_item_infoActionPerformed
+        
+        JOptionPane.showMessageDialog(null, "PROJETO DE SISTEMA DE ESTACIONAMENTO QUE CONSISTE EM:\n - CALCULAR O TEMPO E O TOTAL A PAGAR PARA CARROS,\n - CALCULAR O TEMPO E O TOTAL A PAGAR PARA MOTOS.", "AVISO:", 1);
+          
+    }//GEN-LAST:event_txt_sub_item_infoActionPerformed
 
     
     /**
@@ -83,6 +289,20 @@ public class ParkingSystemJavaObjectForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar txt_barra_de_menu_geral;
+    private javax.swing.JButton txt_botao_carro;
+    private javax.swing.JButton txt_botao_limpar_e_liberar;
+    private javax.swing.JButton txt_botao_moto;
+    private javax.swing.JTextField txt_campo_hora;
+    private javax.swing.JTextField txt_campo_permanencia;
+    private javax.swing.JLabel txt_campo_total_a_pagar;
+    private javax.swing.JLabel txt_campo_total_de_horas;
+    private javax.swing.JLabel txt_campo_valor_bruto;
+    private javax.swing.JMenu txt_menu_geral;
+    private javax.swing.JMenu txt_menu_sobre;
+    private javax.swing.JPanel txt_painel_geral;
+    private javax.swing.JMenuItem txt_sub_item_info;
+    private javax.swing.JMenuItem txt_sub_item_sair;
     // End of variables declaration//GEN-END:variables
 }
 
